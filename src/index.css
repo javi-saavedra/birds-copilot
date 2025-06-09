@@ -7,6 +7,12 @@
 	background-color: #242424;
 	--text-color: rgba(255, 255, 255, 0.87);
 	--bg-color: #242424;
+	--text-secondary: #4F7A96;
+	--bg-sidebar: #FBFCFF;
+	--border-color: #D5DADF;
+	--black: #0D171C;
+	--accent: #1D60F0;
+	--bg-secondary: #4D76A7;
 }
 
 @media (prefers-color-scheme: light) {
@@ -15,5 +21,28 @@
 		background-color: #ffffff;
 		--text-color: #213547;
 		--bg-color: #ffffff;
+		--text-secondary: #4F7A96;
+		--bg-sidebar: #FBFCFF;
+		--border-color: #D5DADF;
+		--black: #0D171C;
+		--accent: #1D60F0;
+		--bg-secondary: #4D76A7;
+	}
+}
+
+@theme {
+	--color-primary: var(--text-color);
+	--color-background: var(--bg-color);
+	--color-blueberry: var(--text-secondary);
+	--color-sidebar: var(--bg-sidebar);
+	--color-border-color: var(--border-color);
+	--color-black: var(--black);
+	--color-accent: var(--accent);
+	--color-secondary: var(--bg-secondary);
+}
+
+@layer base {
+	body {
+		@apply bg-background text-primary;
 	}
 }

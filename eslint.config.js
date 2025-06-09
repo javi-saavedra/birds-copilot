@@ -6,9 +6,12 @@ import tseslint from 'typescript-eslint'
 import react from 'eslint-plugin-react'
 
 export default tseslint.config(
-  { ignores: ['dist'] },
+  { ignores: ['dist', 'src/index.css'] },
   {
-    extends: [js.configs.recommended, ...tseslint.configs.recommendedTypeChecked],
+    extends: [
+      js.configs.recommended,
+      ...tseslint.configs.recommendedTypeChecked,
+    ],
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2020,
