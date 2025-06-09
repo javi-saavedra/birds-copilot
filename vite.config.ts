@@ -9,7 +9,16 @@ export default defineConfig(({ mode }) => {
 
 	return {
 		plugins: [react(), tailwindcss()],
-		base: '/',
+		base: './',
+		build: {
+			outDir: 'dist',
+			assetsDir: 'assets',
+			rollupOptions: {
+				output: {
+					manualChunks: undefined
+				}
+			}
+		},
 		resolve: {
 			alias: {
 				'@': path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'src'),
