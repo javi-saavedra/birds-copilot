@@ -47,13 +47,17 @@ const WatermarkedImage = memo(({ src, className, alt, ...props }: WatermarkedIma
     }
 
     if (error) {
-        console.error('Error loading watermarked image:', error);
-        return <div className="text-red-500 text-sm">Failed to load image</div>;
+        return <img
+            src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Image-not-found.png"
+            className={className}
+            alt={alt}
+            {...props}
+        />
     }
 
     return (
         <img
-            src={watermarkedUrl || src}
+            src={watermarkedUrl}
             className={className}
             alt={alt}
             {...props}
